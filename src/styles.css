@@ -1,0 +1,117 @@
+:root {
+  font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #111827;
+  background: #eef0f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.app-shell {
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  background: #eef0f3;
+}
+
+.flow-container {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #dde2ea;
+  background: #e8ecf1;
+}
+
+.tree-node {
+  width: 110px;
+  min-height: 34px;
+  border-radius: 4px;
+  border: 1px solid #445069;
+  background: #3f4a61;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 8px 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: box-shadow 140ms ease, transform 140ms ease;
+}
+
+.tree-node:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.tree-node.root-node {
+  background: #2f8fe4;
+  border-color: #1d7dd3;
+}
+
+.tree-node.selected {
+  box-shadow: 0 0 0 2px rgba(47, 143, 228, 0.22);
+}
+
+.node-title-row {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.expand-dot {
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 0;
+  background: #f5a623;
+  color: #ffffff;
+  font-size: 10px;
+  line-height: 13px;
+  text-align: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.expand-dot:hover {
+  background: #f0b554;
+}
+
+.hidden-handle {
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  background: transparent;
+}
+
+.react-flow__background {
+  display: none;
+}
+
+.react-flow__attribution {
+  display: none;
+}
+
+.react-flow__controls {
+  box-shadow: none;
+}
+
+.react-flow__controls-button {
+  border-color: #cfd8e3;
+}
+
+.react-flow__minimap {
+  background: #f3f6fa;
+}
