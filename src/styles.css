@@ -28,6 +28,106 @@ body,
   height: 100%;
   border: 1px solid #dde2ea;
   background: #e8ecf1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tree-flow-shell {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolbar {
+  padding: 10px 10px 6px;
+  border-bottom: 1px solid #dde2ea;
+  background: #ecf1f7;
+}
+
+.toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  width: 320px;
+  max-width: 100%;
+  height: 30px;
+  border: 1px solid #c5cfde;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #111827;
+  background: #ffffff;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #2f8fe4;
+  box-shadow: 0 0 0 2px rgba(47, 143, 228, 0.18);
+}
+
+.rename-input {
+  width: 220px;
+  max-width: 100%;
+  height: 30px;
+  border: 1px solid #c5cfde;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #111827;
+  background: #ffffff;
+}
+
+.rename-input:focus {
+  outline: none;
+  border-color: #2f8fe4;
+  box-shadow: 0 0 0 2px rgba(47, 143, 228, 0.18);
+}
+
+.rename-input:disabled {
+  background: #f1f4f8;
+  color: #6b7280;
+}
+
+.toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.toolbar-button {
+  height: 30px;
+  border: 1px solid #b8c5d8;
+  background: #ffffff;
+  color: #1f2937;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.toolbar-button:hover:not(:disabled) {
+  background: #f7f9fc;
+}
+
+.toolbar-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.toolbar-button.danger {
+  border-color: #e6b8b8;
+  color: #992626;
+}
+
+.toolbar-meta {
+  margin-top: 6px;
+  font-size: 11px;
+  color: #4b5563;
 }
 
 .tree-node {
@@ -44,7 +144,8 @@ body,
   align-items: center;
   justify-content: center;
   position: relative;
-  transition: box-shadow 140ms ease, transform 140ms ease;
+  transition: box-shadow 140ms ease, transform 140ms ease, opacity 160ms ease;
+  animation: nodeFadeIn 160ms ease;
 }
 
 .tree-node:hover {
@@ -59,6 +160,14 @@ body,
 
 .tree-node.selected {
   box-shadow: 0 0 0 2px rgba(47, 143, 228, 0.22);
+}
+
+.tree-node.search-match {
+  box-shadow: 0 0 0 2px rgba(245, 166, 35, 0.45), 0 6px 12px rgba(0, 0, 0, 0.22);
+}
+
+.tree-node.search-dim {
+  opacity: 0.35;
 }
 
 .node-title-row {
@@ -114,4 +223,15 @@ body,
 
 .react-flow__minimap {
   background: #f3f6fa;
+}
+
+@keyframes nodeFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
