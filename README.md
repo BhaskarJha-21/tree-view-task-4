@@ -2,6 +2,10 @@
 
 React Flow-based tree visualizer for hierarchical data.
 
+## UI Preview
+
+![Tree View UI](assets/tree-view-ui.png)
+
 ## Implemented Features
 
 - Proper tree layout with computed sibling spacing
